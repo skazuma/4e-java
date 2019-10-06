@@ -20,8 +20,9 @@ public class HomeworkS1 {
       HTurtle m = new HTurtle();
       f.add(m);
       for(int i = 0; i < n; i++){
-          m.fd(size); m.rt(k * 360.0 / n);
-          m.polygon(6,50);
+          m.fd(size);
+          m.polygon(6,50); 
+          m.rt(k * 360.0 / n);
       }
     }
   }
