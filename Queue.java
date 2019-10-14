@@ -5,28 +5,37 @@ import java.util.List;
 public class Queue {
   private int size;
   private int maxSize;
-  private int sp;
   List<Object> list=new ArrayList<>();
 
   public static void main(String[] args){
     Queue q=new Queue(5);
     q.enqueue("sss");
     q.enqueue(44);
+    q.dequeue();
     q.enqueue(2.1);
     q.enqueue(true);
     q.enqueue("1");
     q.enqueue(2);
 
-    for(int i=0;i<5;i++)
+    for(int i=0;i<6;i++)
     {
       System.out.println(q.dequeue());
     }
+    System.out.println("‰Šú‰»ŒŸØ");
+
+    for(int i=0;i<5;i++){
+      q.enqueue(i);
+      System.out.println(-i);
+    }
+    System.out.println(q.dequeue());
+    q.initiate();
+    System.out.println(q.dequeue());
+
   }
 
   public Queue(int maxSize){
     this.size=0;
     this.maxSize=maxSize;
-    this.sp=0;
   }
 
   public void enqueue(Object item){
@@ -47,9 +56,8 @@ public class Queue {
       if(this.size==0){
         throw new RuntimeException("ƒLƒ…[‚ª‹ó‚Å‚·B");
       }
-      Object item=list.get(this.sp);
-      list.remove(this.sp);
-      this.sp=(this.sp+1) % this.maxSize;
+      Object item=list.get(0);
+      list.remove(0);
       this.size--;
       return item;
     } catch(Exception e){
@@ -57,6 +65,13 @@ public class Queue {
       System.out.println(e);
 
       return null;
+    }
+  }
+
+  public void initiate(){
+    while(this.size>0){
+      list.remove(0);
+      this.size--;
     }
   }
 }
