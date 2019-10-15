@@ -55,13 +55,13 @@ public class Stack<T> {
     }
   }
 
-  public Object pop(){
+  public T pop(){
     try{
       if(this.sp==0){
         throw new RuntimeException("スタックが空です。");
       }
       this.sp--;
-      Object item=list.get(this.sp);
+      T item=list.get(this.sp);
       list.remove(this.sp);
       return item;
     } catch(Exception e){
