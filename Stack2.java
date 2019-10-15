@@ -2,37 +2,34 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Stack<T> {
+public class Stack2 {
   private int maxSize;
   private int sp;
-  List<T> list= new ArrayList<>();
+  List<Object> list= new ArrayList<>();
 
   public static void main(String[] args){
-    Stack<String> s=new Stack<String>(5);
+    Stack2 s=new Stack2(5);
     s.push("sss");
     s.pop();
-    s.push("r");
+    s.push(44);
     s.pop();
-    s.push("ff");
-    s.push("m");
+    s.push(2.1);
+    s.push(true);
     s.push("1");
-    s.push("55");
+    s.push(2);
 
-    for(int i=0;i<6;i++)
+    for(int i=0;i<3;i++)
     {
       System.out.println(s.pop());
     }
 
-    s.initiate();
+    s.push(5);
+    s.push(6);
+    s.push(7);
+    s.push(8);
+    s.push(9);
 
-    Stack<Integer> s1=new Stack<Integer>(5);
-    for(int i=0;i<5;i++){
-      s1.push(i);
-    }
-    for(int i=0;i<6;i++)
-    {
-      System.out.println(s1.pop());
-    }
+    s.initiate();
 
 
   }
@@ -42,7 +39,7 @@ public class Stack<T> {
     this.sp=0;
   }
 
-  public void push(T item){
+  public void push(Object item){
     try{
       if(this.sp==maxSize){
         throw new RuntimeException("スタックが満杯です。");
