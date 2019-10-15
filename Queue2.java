@@ -2,26 +2,26 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Queue<T> {
+public class Queue2 {
   private int size;
   private int maxSize;
-  List<T> list=new ArrayList<>();
+  List<Object> list=new ArrayList<>();
 
   public static void main(String[] args){
-    Queue<Integer> q=new Queue<Integer>(5);
-    q.enqueue(2);
+    Queue2 q=new Queue2(5);
+    q.enqueue("sss");
     q.enqueue(44);
     q.dequeue();
-    q.enqueue(23);
-    q.enqueue(5);
-    q.enqueue(4);
+    q.enqueue(2.1);
+    q.enqueue(true);
+    q.enqueue("1");
     q.enqueue(2);
 
     for(int i=0;i<6;i++)
     {
       System.out.println(q.dequeue());
     }
-    System.out.println("‰Šú‰»ŒŸØ");
+    System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
     for(int i=0;i<5;i++){
       q.enqueue(i);
@@ -38,30 +38,30 @@ public class Queue<T> {
     this.maxSize=maxSize;
   }
 
-  public void enqueue(T item){
+  public void enqueue(Object item){
     try{
       if(this.size==maxSize){
-        throw new RuntimeException("ƒLƒ…[‚ª–”t‚Å‚·B");
+        throw new RuntimeException("ï¿½Lï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½Å‚ï¿½ï¿½B");
       }
       list.add(item);
       this.size++;
     } catch(Exception e){
-      System.out.println("—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B");
+      System.out.println("ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B");
       System.out.println(e);
     }
   }
 
-  public T dequeue(){
+  public Object dequeue(){
     try{
       if(this.size==0){
-        throw new RuntimeException("ƒLƒ…[‚ª‹ó‚Å‚·B");
+        throw new RuntimeException("ï¿½Lï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½B");
       }
-      T item=list.get(0);
+      Object item=list.get(0);
       list.remove(0);
       this.size--;
       return item;
     } catch(Exception e){
-      System.out.println("—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B");
+      System.out.println("ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B");
       System.out.println(e);
 
       return null;
