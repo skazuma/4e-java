@@ -72,7 +72,7 @@ public class Stack<T> {
     }
   }
 
-  public void initiate(){
+  public void initialize(){
     while(this.sp>0){
       sp--;
       list.remove(sp);

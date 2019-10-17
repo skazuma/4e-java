@@ -68,7 +68,7 @@ public class Queue<T> {
     }
   }
 
-  public void initiate(){
+  public void initialize(){
     while(this.size>0){
       list.remove(0);
       this.size--;
