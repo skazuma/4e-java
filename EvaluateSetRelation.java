@@ -1,8 +1,9 @@
 import java.io.*;
 import java.util.*;
 public class EvaluateSetRelation{
-  void dataRead(String[] inFile){
+  void evaluate(String[] inFile){
     Set<String> listH = new HashSet<String>();
+
     //Scanner[] sc = new Scanner[inFile.length];
     String separator = "(\\s+?|\\.|,)";
     for(int i=0; i<inFile.length; i++){
@@ -35,10 +36,10 @@ public class EvaluateSetRelation{
     String inFile[];
     inFile = new String[2];
     inFile[0] = "Batman1.txt";
-    inFile[1] = "Joker.txt";
+    inFile[1] = "Joker1.txt";
     EvaluateSetRelation esr = new EvaluateSetRelation();
 
-    esr.dataRead(inFile);
+    esr.evaluate(inFile);
 
   }
 }
