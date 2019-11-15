@@ -31,11 +31,9 @@ public class EvaluateSetRelation{
         }
       }catch(IOException error){System.out.println("ÉGÉâÅ[î≠ê∂");}
     }
-    System.out.println(setA);
-    System.out.println(setB);
     Set<String> intersection = new HashSet<String>(setA);
-    intersection.retainAll(setB);
     Set<String> union = new HashSet<String>(setA);
+    intersection.retainAll(setB);
     union.addAll(setB);
     double jaccard = (double)intersection.size()/union.size();
     System.out.println("JaccardåWêî:"+jaccard);
