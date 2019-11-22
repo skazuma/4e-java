@@ -62,7 +62,7 @@ public class EvaluateMapRelation{
       String key = iterB.next();
       sizeB += (double)(Math.pow(mapB.get(key),2));
     }
-    sizeB = Math.sqrt(sizeA);
+    sizeB = Math.sqrt(sizeB);
     double cosine = innerProduct/(sizeA*sizeB);
     System.out.println("Cosine—ÞŽ—“x:"+cosine);
   }
@@ -70,7 +70,7 @@ public class EvaluateMapRelation{
   public static void main(String[] args){
     EvaluateMapRelation emr = new EvaluateMapRelation();
 
-    emr.evaluate("Batman.txt", "Batman.txt");
+    emr.evaluate("Batman.txt", "Joker.txt");
 
   }
 }
