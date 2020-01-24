@@ -18,6 +18,7 @@ public class Animal_master4 extends Application {
 	public Piece[] mochigoma1 = new Piece[6];
 	public Piece[] mochigoma2 = new Piece[6];
   public int previous_i,previous_j;
+	public int stock1_size = 0;
 	public GridPane gp = new GridPane();
 	public Scene scene_title = null;
 	//public static Scene scene = new Scene(gp);
@@ -95,6 +96,10 @@ public class Animal_master4 extends Application {
 		 mochigoma2_button[i].setMaxWidth(180);
 	 	 stock_p2.getChildren().add(mochigoma2_button[i]);
 	  }
+
+ 	 for(int size = stock1_size;size < 6;size++){
+ 		 mochigoma1_button[size].setStyle("-fx-background-color: #ff000000");
+ 	 }
 
 	  Label time_p1 = new Label("0:00");
 	  Label time_p2 = new Label("0:00");
@@ -285,15 +290,12 @@ public void change(double X,double Y){
  public void set_position_stock1(){
 	 for(int i = 0;i < 6;i++){
 		 	mochigoma1_char[i] = new ImageView(mochigoma1[i].image);
-			//if(mochigoma1_button.getImage() == img_non_char)
-			mochigoma1_button[i].setStyle("-fx-background-color: #ff000000");
 	 }
  }
 
  public void set_position_stock2(){
 	 for(int i = 0;i < 6;i++){
 	 	  mochigoma2_char[i] = new ImageView(mochigoma2[i].image);
-			mochigoma2_button[i].setStyle("-fx-background-color: #ff000000");
 	 }
  }
 
@@ -387,6 +389,9 @@ public void change(double X,double Y){
 
  public void clickStock(Status status, Piece[] mochigoma,int i){
 	 	System.out.println("i:"+i);
+		for(int size = stock1_size;size < 6;size++){
+ 		 mochigoma1_button[size].setStyle("-fx-background-color: #ff000000");
+ 	 }
  }
  public void repaint(){
 	 //画面描画のところ
